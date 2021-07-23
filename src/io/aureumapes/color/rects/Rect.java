@@ -18,7 +18,7 @@ public class Rect extends Frame {
 
     @Override
     public void paint(Graphics g) {
-        for (int i = 100; i > 0; --i) {
+        for (int i = 1000; i > 0; --i) {
             DataHolder holder = new DataHolder();
             int metricsMax = (200 + 100) - 100;
             int coordinatesMax = 1000;
