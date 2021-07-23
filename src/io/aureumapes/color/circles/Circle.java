@@ -1,4 +1,4 @@
-package io.aureumapes.color.rects;
+package io.aureumapes.color.circles;
 
 import io.aureumapes.color.WindowClosingAdapter;
 import io.aureumapes.color.util.DataHolder;
@@ -7,8 +7,8 @@ import io.aureumapes.color.util.RandomColor;
 
 import java.awt.*;
 
-public class Rect extends Frame {
-    public Rect() {
+public class Circle extends Frame {
+    public Circle() {
         super("Some Color");
         addWindowListener(new WindowClosingAdapter(true));
         setBackground(Color.getColor(""));
@@ -18,7 +18,7 @@ public class Rect extends Frame {
 
     @Override
     public void paint(Graphics g) {
-        for (int i = 100; i > 0; --i) {
+        for (int i = 1000; i > 0; --i) {
             DataHolder holder = new DataHolder();
             int metricsMax = (200 + 100) - 100;
             int coordinatesMax = 1000;
@@ -26,7 +26,8 @@ public class Rect extends Frame {
             new GenerateData().generateCoordinates(holder, coordinatesMax);
 
             g.setColor(new RandomColor().getColor());
-            g.fillRect(holder.x - holder.width, holder.y - holder.height, holder.width, holder.height);
+            g.fillOval(holder.x - holder.width, holder.y - holder.height, holder.width, holder.height);
+
         }
     }
 }
